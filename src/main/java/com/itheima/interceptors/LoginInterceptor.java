@@ -19,6 +19,8 @@ public class LoginInterceptor implements HandlerInterceptor {
         //验证token
         try {
             Map<String, Object> claims = JwtUtil.praseToken(token);
+
+            //把业务数据存储到tl中
             //放行
             return true;
         } catch (Exception e) {
